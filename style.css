@@ -91,20 +91,46 @@ header .logo img {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
+    gap: 1rem;
 }
 .filter button{
-    padding: 1rem 5rem;
+   width: 200px;
+   padding: 1rem;
     border-radius: 2rem;
     outline: none;
     border: none;
     font-size: 1.1rem;
     font-weight: 700;
+    transition: all ease-in-out 0.3s  ;
+    background-color: #E5EEFB;
 
 }
 .filter button:hover {
   background-color: #3887ff;
   color: azure;
 }
+.create{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+.create button{
+    background-color: #1B7BFE;
+    padding: 1rem;
+    color: azure;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.create button i{
+    font-size: 2rem;
+}
+.create button:hover{
+    color:#1B7BFE;
+    background-color:#c3e1fe;
+}
+
 /* mode  */
 body.dark {
   background-color: #111f32;
