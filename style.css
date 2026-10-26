@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* font-family: "Nunito", sans-serif; */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: "Nunito", sans-serif;
 }
 :root {
   --body-bg: #ddecfd;
@@ -21,6 +25,10 @@ body {
 .ticktask-container {
   background-color: var(--container-bg);
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 .ticktask-container header {
   width: 100%;
@@ -29,13 +37,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:1rem;
+  padding: 1rem;
 }
 header #mode {
   padding: 1rem;
   cursor: pointer;
   border-radius: 1em;
-  outline:none;
+  outline: none;
   border: none;
 }
 header #mode i {
@@ -44,12 +52,48 @@ header #mode i {
 header .logo img {
   width: 200px;
 }
+.progress {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: #e4f1fe;
+  border-radius: 2rem;
+}
+.progress .title h2 {
+  font-weight: 900;
+  color: #304266;
+}
+.progress .progress-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.progress-track div {
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  font-weight: 800;
+  color: #304266;
+}
+.progress-track div:hover {
+  background-color: #3887ff;
+  color: azure;
+}
+.progress .progress-track .pending span {
+  color: rgb(218, 218, 34);
+}
+.progress .progress-track .completed span {
+  color: rgb(47, 215, 47);
+}
 
 /* mode  */
-body.dark{
-    background-color:#111F32 ;
-
+body.dark {
+  background-color: #111f32;
 }
-body.dark .ticktask-container header{
-    background-color:#0A172B ;
+body.dark .ticktask-container header {
+  background-color: #0a172b;
 }
