@@ -79,17 +79,32 @@ header .logo img {
   font-weight: 800;
   color: #304266;
 }
-.progress-track div:hover {
-  background-color: #3887ff;
-  color: azure;
-}
 .progress .progress-track .pending span {
   color: rgb(218, 218, 34);
 }
 .progress .progress-track .completed span {
   color: rgb(47, 215, 47);
 }
+.filter{
+    background: transparent;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.filter button{
+    padding: 1rem 5rem;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
 
+}
+.filter button:hover {
+  background-color: #3887ff;
+  color: azure;
+}
 /* mode  */
 body.dark {
   background-color: #111f32;
