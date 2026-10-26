@@ -1,2 +1,3 @@
 # TickTask
-- dark theme mode btn added 
+- initial 
+ - dark mode theme , create btn , progress sec ,  header with logo style completed
