@@ -131,6 +131,51 @@ header .logo img {
     background-color:#c3e1fe;
 }
 
+.create-task{
+  width: 100%;
+  padding: 1rem ;
+}
+.create-task .task{
+  background: var(--body-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.taskheadering{
+  /* width: 90%; */
+  padding: 1rem;
+}
+
+.create-task .task > #checkbox{
+ width: 30px;
+ height: 30px;
+ cursor: pointer;
+}
+.edit{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+.edit .dlt{
+  color: rgb(255, 25, 25);
+   cursor: pointer;
+
+}
+.edit .pen{
+  color: #304266;
+   cursor: pointer;
+
+}
+
+
+
+
+
+
 /* mode  */
 body.dark {
   background-color: #111f32;
