@@ -150,8 +150,9 @@ header .logo img {
   border: 1px solid var(--accent);
 }
 .taskheader {
-  /* width: 90%; */
+  width: 100%;
   padding: 1rem;
+
 }
 
 .task-wrapper .task > #checkbox {

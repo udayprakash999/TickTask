@@ -4,6 +4,7 @@ const openInput = document.getElementById("openInput");
 const ticktaskInput = document.getElementById("ticktaskInput");
 const closeBtn = document.querySelector(".closeBtn");
 const taskWrapper = document.querySelector(".task-wrapper");
+const pendingTask = document.getElementById('pendingTask')
 
 let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
 
@@ -36,25 +37,43 @@ function submitForm(data) {
   ticktaskInput.classList.remove("active");
   showTasks();
 }
-
+function saveTasks() {
+  localStorage.setItem("submissions", JSON.stringify(submissions));
+}
 function showTasks() {
   taskWrapper.innerHTML = ``;
   submissions.forEach((task) => {
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
-    taskDiv.innerHTML = `
-        <input type="checkbox" id="checkbox" />
-          <div class="taskheader">
-            <h3>${task.title}</h3>
-            <p class="description">${task.description}</p>
-          </div>
-          <div class="edit">
-            <i class="fa-solid fa-pen-to-square pen"></i>
-            <i class="fa-solid fa-trash dlt"></i>
-          </div>
+
+    let inputCheckbox = document.createElement("input");
+    inputCheckbox.type = "checkbox";
+    inputCheckbox.checked = task.isTicked;
+    inputCheckbox.id = "checkbox";
+
+    inputCheckbox.addEventListener("change", () => {
+      task.isTicked = inputCheckbox.checked;
+      saveTasks();
+      showTasks();
+    });
+
+    let taskHeader = document.createElement("div");
+    taskHeader.classList.add("taskheader");
+    taskHeader.innerHTML = `
+    <h3>${task.title}</h3>
+    <p class="description">${task.description}</p>
     `;
+    let taskEdit = document.createElement("div");
+    taskEdit.classList.add("edit");
+    taskEdit.innerHTML = `
+    <i class="fa-solid fa-pen-to-square pen"></i>
+    <i class="fa-solid fa-trash dlt"></i>
+    `;
+    taskDiv.append(inputCheckbox, taskHeader, taskEdit);
+
     taskWrapper.appendChild(taskDiv);
     console.log(task.title);
   });
 }
 showTasks();
+
