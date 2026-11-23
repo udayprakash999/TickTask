@@ -1,6 +1,16 @@
 // variables
 const inputForm = document.querySelector(".input-form");
+const openInput = document.getElementById("openInput");
+const ticktaskInput = document.getElementById("ticktaskInput");
+const closeBtn = document.querySelector(".closeBtn");
 
+
+openInput.addEventListener("click", () => {
+  ticktaskInput.classList.add("active");
+});
+closeBtn.addEventListener("click", () => {
+  ticktaskInput.classList.remove("active");
+});
 inputForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let formData = new FormData(inputForm);

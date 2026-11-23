@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-/* font-family: "Nunito", sans-serif; */
 @import url("/style/input.css");
 * {
   margin: 0;
@@ -7,7 +6,6 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
 }
 :root {
   --body-bg: #090a0c;
@@ -16,13 +14,14 @@
   --color: #e5e7eb;
   --surface: #202329;
   --muted: #9299a5;
+  --font: "Nunito", sans-serif;
 }
 body {
   background-color: var(--body-bg);
   color: var(--color);
   width: 100%;
   height: 100vh;
-
+  font-family: var(--font);
   display: flex;
   justify-content: center;
   padding: 2rem 0;
@@ -40,8 +39,7 @@ body {
 }
 .ticktask-container header {
   width: 100%;
-  background-color: #c3e1fe;
-
+  background-color: var(--surface);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,12 +65,12 @@ header .logo img {
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
-  background: #e4f1fe;
-  border-radius: 2rem;
+  background: var(--surface);
+  border-radius: 1rem;
 }
 .progress .title h2 {
   font-weight: 900;
-  color: #304266;
+  color: var(--accent);
 }
 .progress .progress-track {
   display: flex;
@@ -85,13 +83,13 @@ header .logo img {
   cursor: pointer;
   border-radius: 1rem;
   font-weight: 800;
-  color: #304266;
+  color: var(--muted);
 }
 .progress .progress-track .pending span {
-  color: rgb(218, 218, 34);
+  color: var(--muted);
 }
 .progress .progress-track .completed span {
-  color: rgb(47, 215, 47);
+  color: var(--accent);
 }
 .filter {
   background: transparent;
@@ -103,64 +101,60 @@ header .logo img {
 }
 .filter button {
   width: 200px;
-  padding: 1rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 2rem;
   outline: none;
   border: none;
   font-size: 1.1rem;
   font-weight: 700;
   transition: all ease-in-out 0.3s;
-  background-color: #e5eefb;
+  background-color: var(--color);
 }
 .filter button:hover {
-  background-color: #3887ff;
-  color: azure;
+  background-color: var(--accent);
+  color: var(--color);
 }
-.create {
-  width: 90%;
-  display: flex;
-  justify-content: end;
-}
-.create button {
-  background-color: #1b7bfe;
+.createBtn {
+  background-color: var(--accent);
   padding: 0.8rem;
-  color: azure;
+  color: var(--color);
   border-radius: 2rem;
   outline: none;
   border: none;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
-.create button i {
+.createBtn i {
   font-size: 1.4rem;
 }
-.create button:hover {
-  color: #1b7bfe;
-  background-color: #c3e1fe;
+.createBtn:hover {
+  color: var(--accent);
+  background-color: var(--color);
 }
 
-.create-task {
+.task-wrapper {
   width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.create-task .task {
-  background: #f6f8fd;
+.task-wrapper .task {
+  background: var(--surface);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
   padding: 1rem;
   border-radius: 10px;
-  border: 1px solid #7a8bb0;
+  border: 1px solid var(--accent);
 }
-.taskheadering {
+.taskheader {
   /* width: 90%; */
   padding: 1rem;
 }
 
-.create-task .task > #checkbox {
+.task-wrapper .task > #checkbox {
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -172,57 +166,16 @@ header .logo img {
   font-size: 1.3rem;
 }
 .edit .dlt {
-  color: #ec4034;
+  color: #f6594e95;
   cursor: pointer;
 }
+.edit .dlt:hover {
+  color: #f6594e;
+}
 .edit .pen {
-  color: #304266;
+  color: #435985;
   cursor: pointer;
 }
 .edit .pen:hover {
-  color: #435985;
-}
-
-.taskModal {
-  background: orange;
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  padding: 0 1rem;
-}
-.taskModal .content {
-  background: yellow;
-}
-.content .heading {
-  background: navajowhite;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.taskForm {
-  background: rgb(84, 44, 51);
-}
-.input-container {
-  background: red;
-  width: 100%;
-}
-.title-task {
-  background: salmon;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#taskTitle {
-  background: seagreen;
-}
-.descr textarea {
-  width: 100%;
-}
-
-/* mode  */
-body.dark {
-  background-color: #ddecfd;
-}
-body.dark .ticktask-container header {
-  background-color: #0a172b;
+  color: var(--accent);
 }
