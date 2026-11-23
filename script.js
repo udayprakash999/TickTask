@@ -1,11 +1,26 @@
-function toggleMode(){
-    document.body.classList.toggle("dark");
+// variables
+const inputForm = document.querySelector(".input-form");
 
-    const icon  = document.querySelector("#mode i");
-
-    if(document.body.classList.contains("dark")){
-        icon.classList.replace("fa-moon", "fa-sun");
-    }else{
-        icon.classList.replace("fa-sun", "fa-moon");
-    }
+inputForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let formData = new FormData(inputForm);
+  let formEntries = Object.fromEntries(formData.entries());
+  submitForm(formEntries);
+  inputForm.reset();
+});
+function submitForm(data) {
+  let title = data.title;
+  let description = data.description;
+  const newTask = {
+    title,
+    description,
+    timestamp: new Date().toISOString(),
+  };
+  let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+  submissions.push(newTask);
+  localStorage.setItem("submissions", JSON.stringify(submissions));
+  console.log(title, description);
 }
+let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+
+console.log(submissions);
