@@ -110,7 +110,7 @@ header .logo img {
   transition: all ease-in-out 0.3s;
   background-color: var(--color);
 }
-.filter button:hover {
+.filter button:hover, .filter button.activeFilter {
   background-color: var(--accent);
   color: var(--color);
 }
@@ -152,7 +152,6 @@ header .logo img {
 .taskheader {
   width: 100%;
   padding: 1rem;
-
 }
 
 .task-wrapper .task > #checkbox {
@@ -160,23 +159,23 @@ header .logo img {
   height: 30px;
   cursor: pointer;
 }
-.edit {
+.taskActions {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   font-size: 1.3rem;
 }
-.edit .dlt {
+.taskActions .taskDelete {
   color: #f6594e95;
   cursor: pointer;
 }
-.edit .dlt:hover {
+.taskActions .taskDelete:hover {
   color: #f6594e;
 }
-.edit .pen {
+.taskActions .taskEdit {
   color: #435985;
   cursor: pointer;
 }
-.edit .pen:hover {
+.taskActions .taskEdit:hover {
   color: var(--accent);
 }
