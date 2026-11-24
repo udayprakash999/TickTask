@@ -38,14 +38,14 @@ editForm.addEventListener("submit", (e) => {
   editForm.reset();
 });
 function updateTask(data, id) {
+  const toEdit = submissions.find((task) => task.id === id);
   if (toEdit) {
-    const toEdit = submissions.find((task) => task.id === id);
     toEdit.title = data.title;
     toEdit.description = data.description;
     ticktaskEdit.classList.remove("active");
     saveTasks();
     showTasks(submissions);
-  } else return
+  } else return;
 }
 function submitForm(data) {
   let title = data.title;
@@ -116,8 +116,11 @@ function showTasks(submissions) {
   });
 }
 function editTask(id) {
+  const toEdit = submissions.find((task) => task.id === id);
   ticktaskEdit.id = `${id}`;
   ticktaskEdit.classList.add("active");
+  editForm.elements.title.value = toEdit.title;
+  editForm.elements.description.value = toEdit.description;
 }
 function deleteTask(id) {
   const updatedSubmissions = submissions.filter((task) => task.id !== id);
